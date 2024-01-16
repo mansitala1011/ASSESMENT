@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ASSESMENT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: white;
+            padding-top: 13px;
+        }
+
+        .services {
+            background-color: navy;
+            color: white;
+            padding: 16px;
+            border: none;
+        }
+
+        .dropdown-menu {
+            position: relative;
+            /* display: inline-block; */
+        }
+
+        .section-1 {
+            display: none;
+            position: absolute;
+            background-color: navy;
+            width: 120px;
+            z-index: 1;
+        }
+
+        nav {
+            background-color: navy;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .links,
+        .contant {
+            /* display: inline-block; */
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+
+        .contant {
+            display: block;
+        }
+
+        .contant:hover,
+        .links:hover {
+            background-color: red;
+        }
+
+        .dropdown-menu:hover .section-1 {
+            display: block;
+        }
+
+        .dropdown-menu:hover .services {
+            background-color: red;
+        }
+
+        button {
+            color: white;
+            background-color: navy;
+            border: none;
+        }
+
+        .section {
+            display: flex;
+            gap: 50px;
+            padding-left: 400px;
+        }
+
+        .More {
+        background-color: navy;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: 75%;
+        left: 100%;
+        width: 120px;
+        z-index: 1;
+    }
+
+    </style>
+</head>
+<body>
+    <body>
+        <nav>
+            <div class="logo">LOGO</div>
+            <div class="section">
+                <a class="links" href="#">HOME</a>
+                <a class="links" href="#">ABOUT-US</a>
+                <div class="dropdown-menu">
+                    <button class="services">SERVICES </button>
+                    <div class="section-1">
+                        <a class="contant" href="#">Web dessign</a>
+                        <hr>
+                        <a class="contant" href="#">Marketing</a>
+                        <hr>
+                        <a class="contant" href="#">Wordpress</a>
+                        <hr>
+                        <a class="contant" href="#">More++</a>
+
+                        <div class="More">
+                            <div class="section-2">
+                                <a class="contant" href="#">HTML</a>
+                                <hr>
+                                <a class="contant" href="#">CSS</a>
+                                <hr>
+                                <a class="contant" href="#">Java script</a>
+                                <hr>
+                                <a class="contant" href="#">Jquery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="contant" href="#">CONTACT-US</a>
+                <a class="contant" href="#">BLOGS</a>
+            </div>
+            <button class="login">LOGIN</button>
+        </nav>
+    </body>
+
+    </html>
+</body>
+</body>
+</html>
