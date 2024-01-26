@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text convter in js</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+            font-size: 20px;
+            background-color: aliceblue;
+        }
+
+        .convter input {
+            background-color: brown;
+            color: white;
+            font-size: larger;
+            height: 200px;
+            width: 600px;
+        }
+
+        .convter {
+            margin-left: 400px;
+        }
+
+        .convter button {
+            background-color: brown;
+            color: white;
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text convter</h1>
+    <div class="convter">
+        <input type="text" id="result">
+        <br>
+        <br>
+        <button onclick="UpperCase()">Upper Case</button>
+        <button onclick="lowerCase()">Lower Case</button>
+        <button onclick="cleartext()">Clear Text</button>
+        <br>
+        <br>
+        <button onclick="trim()">Trim</button>
+        <button onclick="wordcount()">Word Count</button>
+        <button onclick="replace()">Replace</button>
+        <br>
+        <br>
+        <button onclick="Charctercount()">Charcter Count</button>
+        <button onclick="split()">Split</button>
+
+
+        <script>
+            function UpperCase() {
+                let a = document.getElementById("result").value;
+                document.getElementById("result").value = a.toUpperCase();
+            }
+            function lowerCase() {
+                let b = document.getElementById("result").value;
+                document.getElementById("result").value = b.toLowerCase();
+            }
+            function cleartext() {
+                document.getElementById("result").value = "";
+            }
+            function trim() {
+                let d = document.getElementById("result").value;
+                document.getElementById("result").value = d.trim();
+            }
+            function wordcount() {
+                let e = document.getElementById("result").value;
+                document.getElementById("result").value = e.length;
+            }
+            function replace() {
+                let f = document.getElementById("result").value;
+                document.getElementById("result").value = f.replace("mansi","tala");    
+            }
+            function Charctercount() {
+                let g = document.getElementById("result").value;
+                document.getElementById("result").value = g.length;
+            }
+            function split() {
+                let h = document.getElementById("result").value;          
+                document.getElementById("result").value = h.split("");
+            }
+        </script>
+</body>
+
+</html>
