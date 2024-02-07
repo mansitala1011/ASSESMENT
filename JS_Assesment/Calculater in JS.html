@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>calculater</title> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: larger;
+            background-color: orange;
+        }
+
+        h1 {
+            margin: 0 auto;
+            font-size: 60px;
+            text-align: center;
+            color: white;
+        }
+
+        hr {
+            color: black;
+            border: 10px solid black;
+        }
+
+        .main {
+            margin-left: 550px;
+        }
+
+        .sbtn {
+            height: 65px;
+            width: 85px;
+            border: 3px solid black;
+        }
+
+        .mbtn {
+            height: 65px;
+            width: 175px;
+            border: 3px solid black;
+        }
+
+        .bbtn {
+            height: 90px;
+            width: 360px;
+            border: 3px solid black;
+        }
+
+        input {
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Calculater</h1>
+    <br>
+    <hr>
+    <br>
+    <div class="main">
+        <input type="button" id="result" value="" name="answer" class="bbtn">
+        <br>
+        <br>
+        <input type="button" id="seven" value="7" class="sbtn" onclick="dis('7')" onkeydown="myFunction(event)">
+        <input type="button" id="eight" value="8" class="sbtn" onclick="dis('8')" onkeydown="myFunction(event)">
+        <input type="button" id="nine" value="9" class="sbtn" onclick="dis('9')" onkeydown="myFunction(event)">
+        <input type="button" id="plus" value="+" class="sbtn" onclick="dis('+')" onkeydown="myFunction(event)">
+        <br>
+        <br>
+        <input type="button" id="four" value="4" class="sbtn" onclick="dis('4')" onkeydown="myFunction(event)">
+        <input type="button" id="five" value="5" class="sbtn" onclick="dis('5')" onkeydown="myFunction(event)">
+        <input type="button" id="six" value="6" class="sbtn" onclick="dis('6')" onkeydown="myFunction(event)">
+        <input type="button" id="-" value="-" class="sbtn" onclick="dis('-')" onkeydown="myFunction(event)">
+        <br>
+        <br>
+        <input type="button" id="one" value="1" class="sbtn" onclick="dis('1')" onkeydown="myFunction(event)">
+        <input type="button" id="two" value="2" class="sbtn" onclick="dis('2')" onkeydown="myFunction(event)">
+        <input type="button" id="three" value="3" class="sbtn" onclick="dis('3')" onkeydown="myFunction(event)">
+        <input type="button" id="*" value="*" class="sbtn" onclick="dis('*')" onkeydown="myFunction(event)">
+        <br>
+        <br>
+        <input type="button" id="zero" value="0" class="sbtn" onclick="dis('0')" onkeydown="myFunction(event)">
+        <input type="button" id="modual" value="%" class="sbtn" onclick="dis('%')" onkeydown="myFunction(event)">
+        <input type="button" id="dot" value="." class="sbtn" onclick="dis('.')" onkeydown="myFunction(event)">
+        <input type="button" id="/" value="/" class="sbtn" onclick="dis('/')" onkeydown="myFunction(event)">
+        <br>
+        <br>
+        <input type="button" id="=" value="=" class="mbtn" onclick = "calc()" onkeydown="myFunction(event)">
+        <input type="button" id="c" value="c" class="mbtn" onclick="clr()">
+        <br>
+        <br>
+    </div>
+    <hr>
+    <br>
+    <br>
+</body>
+<script type="text/javascript">
+
+    function calc() {
+        document.getElementById("result").value = eval(document.getElementById("result").value)
+    }
+
+    function dis(val) {
+        document.getElementById("result").value += val
+    }
+
+    function clr() {
+        document.getElementById("result").value = ""
+    }
+
+    function myFunction(event) {
+        if (event.key == '0' || event.key == '1'
+            || event.key == '2' || event.key == '3'
+            || event.key == '4' || event.key == '5'
+            || event.key == '6' || event.key == '7'
+            || event.key == '8' || event.key == '9'
+            || event.key == '+' || event.key == '-'
+            || event.key == '*' || event.key == '/'
+            || event.key == '.' || event.key == '%')
+            document.getElementById("result").value += event.key;
+    }
+
+    var cal = document.getElementById("main");
+    cal.onkeyup = function (event) {
+        if (event.keyCode === 'enter') {
+            console.log("Enter");
+            let x = document.getElementById("result").value
+            console.log(x);
+            solve();
+        }
+    }
+
+    function solve() {
+        let x = document.getElementById("result").value
+        let y = math.evaluate(x)
+        document.getElementById("result").value = y
+    }
+
+
+</script>
+
+</html>
