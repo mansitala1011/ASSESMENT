@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY assesment</title>
+    <style>
+        label {
+            font-size: 20px;
+            color: gray;
+        }
+
+        input {
+            border: 2px solid rgb(102, 190, 245);
+            height: 40px;
+            width: 300px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        #password-strength {
+            padding: 5px 10px;
+            color: white;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .medium-password {
+            background-color: orange;
+            border: 1px solid white;
+        }
+
+        .weak-password {
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .strong-password {
+            background-color: green;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div name="frmCheckPassword" id="frmCheckPassword">
+        <label>Password:</label>
+        <input type="password" name="password" id="password" class="Box" onKeyUp="checkPasswordStrength();">
+        <div id="password-strength"></div>
+    </div>
+</body>
+
+<!-- jQuery cdn link is here  -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+    function checkPasswordStrength() {
+        let numbers = /([0 - 9])/;
+        let alphabets = /([a - z, A - Z])/;
+        let specialcherecters = /([~,!,@,#,$,%,^,&,*,_,-,+,=,<,>])/;
+        // let password = ('#password').val().trim();
+
+        if ($('#password').val().length < 6) {
+            $('#password-strength').removeClass();
+            $('#password-strength').addClass('weak-password');
+            $('#password-strength').html('weak (password laters must be 8 characters)');
+        }
+
+        else if ($('#password').val().match(numbers) && $('#password').val().match(alphabets) && $('#password').val().match(specialcherecters)) {
+            $('#password-strength').html("strong");
+            $('#password-strength').removeClass();
+            $('#password-strength').addClass('strong-password');
+        }
+
+        else {
+            $('#password-strength').removeClass();
+            $('#password-strength').addClass('medium-password');
+            $('#password-strength').html("include numbers,alphabets & special charecters");
+        }
+    }
+
+</script>
+
+</html>
