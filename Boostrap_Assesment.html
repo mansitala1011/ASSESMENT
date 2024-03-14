@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostrap assesment</title>
+</head>
+<style>
+
+    h1 {
+        font-size: 50px;
+    }
+
+    label {
+        display: inline-block;
+        font-size: 20px;
+        width: 20%;
+    }
+
+    .box {
+        border: 5px solid black;
+        margin-left: 500px;
+        text-align: center;
+        height: 450px;
+        width: 450px;
+    }
+
+    button {
+        width: 100px;
+        height: 30px;
+    }
+
+    .val {
+        height: 100px;
+        width: 200px;
+        border: 3px solid black;
+        text-align: center;
+        margin-left: 100px;
+    }
+
+    #Result {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <h1>Date interval</h1>
+        <label>From :</label>
+        <input type="date" id="From" class="datepicker">
+        <br>
+        <br>
+        <label>To :</label>
+        <input type="date" id="To" class="datepicker">
+        <br>
+        <br>
+        <button onclick="Result()" style="background-color: rgb(62, 174, 219);">calculate</button>
+        <br>
+        <br>
+        <div id="Result">
+            <h4>Total Days <div id="M1"></div>
+            </h4>
+            <h4>Total Months <div id="M2"></div>
+            </h4>
+            <h4>Total Years <div id="M3"></div>
+            </h4>
+        </div>
+    </div>
+
+    <script>
+        function Result() {
+            let Date1 = document.getElementById("From");
+            let Date2 = document.getElementById("To");
+
+            let a = new Date(Date1.value);
+            let b = new Date(Date2.value);
+
+            // Total Days
+            let totalDays = Math.abs(b - a) / (1000 * 60 * 60 * 24);
+            document.getElementById("M1").innerHTML = totalDays;
+
+            // Total Months
+            let totalMonths = (b.getFullYear() - a.getFullYear()) * 12 + (b.getMonth() - a.getMonth());
+            document.getElementById("M2").innerHTML = totalMonths;
+
+            // Total Years
+            let totalYears = b.getFullYear() - a.getFullYear();
+            document.getElementById("M3").innerHTML = totalYears;
+        }
+    </script>
+
+</body>
+
+</html>
